@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="ps" class="com.care.di_test.PrintString"/> <!-- 객체생성(ps라는 이름으로) -->
+	<bean id="pb" class="com.care.di_test.PrintBean"> <!-- 객체생성(pb 라는 이름으로) -->
+	<!-- 세터를 통해서 객체 주입 -->
+		
+		<property name="ps" ref="ps"/><!-- ref==매개변수 -->
+		<!-- printBean의 이름과 같아야 한다. ref=우리가 등록한 bean 이름 -->
+		<property name="print" value="우엑"/>
+		<!-- printBean의 print변수에 값을 넣겠다. -->
+	
+	</bean>
+	
+
+</beans>

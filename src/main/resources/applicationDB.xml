@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:db.properties"/><!-- db외부 설정 파일 -->
+	<bean id="db" class="com.care.di03.DBClass">
+		<property name="id" value="${db.id}"/><!-- 아이디 -->
+		<property name="pwd" value="${db.pwd}"/><!-- 비번 -->
+		<!-- 지정한 클래스에 setter를 통해서 값을 처리(property) -->
+	</bean>
+	
+	<bean id="db1" class="com.care.di03.DBClass">
+		<constructor-arg value="idid"/><!-- 생성자를 통해서 값을 저장하겠다 -->
+		<constructor-arg value="pwdpwd"/>
+	</bean>
+	
+</beans>
